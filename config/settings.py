@@ -48,7 +48,8 @@ class Common(Configuration):
         'south',  # Database migration helpers:
         'crispy_forms',  # Form layouts
         'avatar',  # for user avatars
-        'rest_framework'
+        'rest_framework',
+        'gunicorn'
     )
 
     # Apps specific for this project go here.
@@ -291,7 +292,7 @@ class Local(Common):
     MIDDLEWARE_CLASSES = Common.MIDDLEWARE_CLASSES + ('debug_toolbar.middleware.DebugToolbarMiddleware',)
     INSTALLED_APPS += ('debug_toolbar',)
 
-    INTERNAL_IPS = ('127.0.0.1',)
+    INTERNAL_IPS = ('192.168.2.8')
 
     DEBUG_TOOLBAR_CONFIG = {
         'INTERCEPT_REDIRECTS': False,
@@ -311,6 +312,8 @@ class Local(Common):
             'PORT': '5432',
         }
     }
+    
+    ALLOWED_HOSTS = ['*']
 
 
 class Production(Common):
