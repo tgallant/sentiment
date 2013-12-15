@@ -1,6 +1,6 @@
 A basic sentiment analysis program written in python/django.
 
-Current site: http://tim.noip.me:81
+Current site: http://tim.noip.me:8001
 
 To download requirements, cd to the sentiment directory and run the following:
 
